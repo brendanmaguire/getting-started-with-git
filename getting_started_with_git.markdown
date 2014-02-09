@@ -1,6 +1,13 @@
 # Getting Started With git
 
 ---
+# Who am I?
+* Brendan Maguire
+* BEng. in Electronic & Computer Engineering
+* Risk Systems Engineer with [Renaissance Reinsurance](http://www.renre.com)
+* Have worked with various version control system over the past 8 years
+
+---
 # What is version control?
 * Version Control Systems refer to systems you can use to manage your source code
 * It provides you with a history of the changes that have been made to a code repository
@@ -35,9 +42,6 @@ Git must be configured so that your commits carry your information
 
 `
 git config --global user.email "johndoe@example.com"
-`
-
-`
 git config --global user.name "John Doe"
 `
 
@@ -61,20 +65,23 @@ git config --global color.ui true
 # Exercise - Set up your profile using git config
 
 ---
-# git init - Creating a repository
+# Creating a repository
+## [git init](http://git-scm.com/docs/git-init)
 Before you write any code you will need to create a repository
 
-    !bash
-    mkdir my-repo
-    cd my-repo
-    git init
+`
+mkdir my-repo
+cd my-repo
+git init
+`
 
 This creates the hidden .git folder which git needs to keep track of the state of the repository.
 
-***Note***: You *normally* shouldn't have to touch these files. Doing so usually leads to bad things
+***Note***: You *normally* shouldn't have to touch these files. Doing so can corrupt your repository
 
 ---
-# git status - Viewing Repository Status
+# Viewing Repository Status
+## [git status](http://git-scm.com/docs/git-status)
 Use this to view the working tree status. This shows files that are in the following states:
 
 * Modified
@@ -98,7 +105,8 @@ git status
 Locally Modified File(s) --&gt; Staging Area --&gt; Committed
 
 ---
-# git add/rm - Adding and removing files
+# Adding and removing files
+## [git add](http://git-scm.com/docs/git-add) & [git rm](http://git-scm.com/docs/git-rm)
 Add a specific file to the staging area
 
 `
@@ -111,21 +119,20 @@ Add all files to the staging area
 git add .
 `
 
-You added a file by mistake. Remove a file from staging
+If you want to remove a file from your repository, you can stage this intent by using:
 
 `
-git rm --cached <file>...
+git rm <file>...
 `
 
 ---
-# git commit - Committing your changeset
+# Committing your changeset
+## [git commit](http://git-scm.com/docs/git-commit)
 Use git commit when you are happy with the changes to your files
 
 `
 git commit
 `
-
-This will open your editor so you can write a changeset message
 
 Some useful commit options:
 
@@ -133,10 +140,11 @@ Some useful commit options:
 * ***-m=&lt;msg&gt; | --message=&lt;msg&gt;*** : Specify your commit message
 * ***--amend*** : Add the current changes in the staging area to the last commit in history
 
-***Tip***: Commit often. It saves you from deleting work by mistake. You can always clean up your history if you want later
+***Tip***: Commit often. It saves you from deleting work by mistake
 
 ---
-# git log - Viewing the repository history
+# Viewing the repository history
+## [git log](http://git-scm.com/docs/git-log)
 Use git log to view the commits in a repository
 
 `
@@ -150,7 +158,7 @@ Some useful commit options:
 * ***git log &lt;file&gt;...*** : Show commits that affected the specified file(s)
 
 ---
-# Exercise - Create a repository and make a commit
+# Exercise - Start a repository
 * Initialise a repository
 * Create a text file within
 * Add the file to the staging area
@@ -158,7 +166,8 @@ Some useful commit options:
 * View your history
 
 ---
-# git diff - Viewing the changes to your tracked files
+# Viewing the changes to your tracked files
+## [git diff](http://git-scm.com/docs/git-diff)
 You will want to view the changes you have made before you commit
 
 * View changes in your working directory
@@ -178,8 +187,9 @@ git diff --cached
 * Now the *'easy'* way!
 * There are many graphical tools for managing your git repositories
 * My suggestions:
-    - gitg : git GUI client (Built for GNOME but works \*everywhere)
+    - gitg : git GUI client (Built for GNOME but works everywhere)
     - tig : A ncurses based client
+    - \_\_git\_ps1: Installed with git-core
 * An extensive list can be found [here](https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools#Graphical_Interfaces)
 
 ---
@@ -195,7 +205,7 @@ git diff --cached
 ***Note***: During all of the above steps make lots of use of the *git status* command. It is very helpful for letting you know what is happening in your repo
 
 ---
-# .gitignore - Ignoring files
+# Ignoring files via .gitignore
 * The gitignore file allows you to tell git to ignore certain files and not list them in your status output
 * This is useful when you are building artifacts in the working directory that you don't want to be commited
 * Examples are:
@@ -211,8 +221,9 @@ git diff --cached
 * .gitignore must be under version control also - Add it to staging and commit
 
 ---
-# git checkout - Reverting changes to the working directory
-Sometimes you realise that the changes you have made have actualy made the code worse and you want to revert to the last committed version of the files
+# Reverting changes to the working directory
+## [git checkout](http://git-scm.com/docs/git-checkout)
+Sometimes you realise that the changes you have made have made the code worse and you want to revert to the last committed version of the files
 
 git checkout will discard all changes you have made to the file. This will not affect files in the staging area
 
@@ -221,14 +232,16 @@ git checkout -- <file>...
 `
 
 ---
-# git reset - Reverting changes in the staging area
+# Reverting changes in the staging area
+## [git reset](http://git-scm.com/docs/git-reset)
 Remove the file(s) from the staging area but keep the changes in your working directory
 
 `
 git reset HEAD <file>...
 `
 
-Remove all files from the staging area and discard their changes totally
+Remove all files from the staging area and discard their changes completely
+
 **Danger**: There is no coming back from this!
 
 `
@@ -236,18 +249,17 @@ git reset HEAD --hard
 `
 
 ---
-# git branch - Working on multiple features at once
-* You will often have situations where you will want to work on multiple seperate features at the same time
-* Branching allows you to do this
-* In this repository there are two live branches; new-secret-feature & big-bad-bug-fix
+# Working on multiple features at once
+## [git branch](http://git-scm.com/docs/git-branch)
+* Branching allows you to will want to work on multiple seperate features at the same time
 * Both can be worked on without affecting the other
+* Branches are pointers to revisions
 
-* IMAGE FROM gitg goes here
-
-* View branches as a pointer to a particular revision
+![branches](images/branches.png)
 
 ---
-# git branch - Creating a branch
+# Creating a branch
+## [git branch](http://git-scm.com/docs/git-branch)
 
 `
 git branch <branchname> [<start-point>]
@@ -255,12 +267,13 @@ git branch <branchname> [<start-point>]
 
 * This will create a new branch
 * You must supply a branch name
-* If you do not supply a start point then the branch will 
+* If you do not supply a start point then the branch will be created at your current revision
 
 ***Note***: Creating a branch does not mean you are now on that branch automatically. It must be checked out
 
 ---
-# git checkout - Going to a specific revision
+# Going to a specific revision
+## [git checkout](http://git-scm.com/docs/git-checkout)
 Use *git checkout* if you would like to go to a specific revision in your repositories history
 
 You can checkout a branch
@@ -274,27 +287,34 @@ or specify a revision using it's sha1 commit key
 `
 git checkout <sha1>
 `
+
 ***Note***: The sha1 key can be found by using the git log command. It's the long string of hex characters
 
 ---
-# git merge - Combining branches
+# Combining branches
+## [git merge](http://git-scm.com/docs/git-merge)
 * Use *git merge* to combine the code changes from two different branches
 
 `
-git checkout branch-1
-git merge branch-2
+git checkout new-secret-feature
+git merge bug-fix-12345
 `
 
+![branches](images/merged.png)
+
 ---
-# git branch - Deleting a branch
+# Deleting a branch
+## [git branch](http://git-scm.com/docs/git-branch)
 * When the changes on a branch have been merged back in, you will want to delete the branch pointer
 
 `
 git branch -d <branchname>
 `
+
 This will only work if the commits on this branch have been merged to another branch
 
 The more terminal option is to use the *-D* option. This will delete the branch pointer even if this branch has not been merged
+
 ***Danger***: You will lose any commits on this branch that have not been merged
 
 `
@@ -302,11 +322,13 @@ git branch -D <branchname>
 `
 
 ---
-# git rebase
+# [git rebase](http://git-scm.com/docs/git-rebase)
 * git rebase allows you to move your branches on top of each other
-* Makes for a more sane history when many branches are live at the same time
+* Makes for a tidier history when many branches are live at the same time
 * No merge commits left in the history
 * Outside the scope of this presentation
+
+![rebase](images/rebase.png)
 
 ---
 # Exercise - Branching & Merging
@@ -331,7 +353,8 @@ git branch -D <branchname>
 * You and your co-workers can each clone a repository, work on it locally, commit your changes, and then contribute your changes back to the original repository
 
 ---
-# git clone - Cloning an Existing Repository
+# Cloning an Existing Repository
+## [git clone](http://git-scm.com/docs/git-clone)
 Create your own working copy of an existing repository
 
 * Cloning over ssh
@@ -348,17 +371,17 @@ Create your own working copy of an existing repository
 
 ---
 # Exercise - Clone a repository from github
-* The github page for this presentation can be found [here](http://github.com/brendanmaguire/???)
-* Find the url you need to clone it over http
-* Clone it
+* Clone the Python requests repository from github [here](https://github.com/kennethreitz/requests)
+* Find the url you need to clone it over http (bottom right of the page)
+* Clone it to your machine
 
 ---
 # ssh keys
 * ssh keys are a way of authenicating automatically with a server running a sshd service
+* You will need an ssh key to push changes to your github repositories
 * Creating an ssh key
 
 `
-# Press enter for all defaults
 ssh-keygen
 `
 
@@ -390,12 +413,14 @@ git push -u origin master
 `
 
 ---
-# Exercise - Push your local repo to your github repo
+# Exercise - Push to your github repo
+* In this exercise you will push your local repos commits to your empty github repo
 * Add the github repo as your remote origin
 * Push your local commits
 
 ---
-# [git pull](http://git-scm.com/docs/git-pull) - Pulling Updates
+# Pulling Updates
+## [git pull](http://git-scm.com/docs/git-pull)
 * Before you attempt to push your changes, you should perform a pull to ensure there are no new commits on the remote server
 * If there are, then you should incoperate them into your local repo (and merge) before pushing
 
@@ -408,15 +433,14 @@ git push -u origin master
 * Pair up with the person beside you
 * Add the other person as a collaborator on your github project
     - In the github UI: Your project -&gt; Setting -&gt; Collorators -&gt; Add
-
 * Clone their repository
 * Make some changes and commit
 * Push to their repository
-
 * Once they've pushed to your repo, make some changes to your own local repository and commit
 * Try to push to your remote repository (hint: it should fail)
 * pull the new changes your partner has made
 * Merge and push
 
 ---
-# Questions???
+# Questions??
+![questions](http://ilsmatters.files.wordpress.com/2012/04/monkey_has_a_question1.jpg)
