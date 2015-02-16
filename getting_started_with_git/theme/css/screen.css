@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  background: #e0e0e0;
+  background: #f0f0f0;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -63,8 +63,8 @@ div.slide {
   margin-left: -400px;
   left: 50%;
   top: 50%;
-  background: #e0e0e0;
-  background-color: #e0e0e0;
+  background: #f0f0f0;
+  background-color: #f0f0f0;
   -webkit-transition: margin 0.25s ease-in-out;
   -moz-transition: margin 0.25s ease-in-out;
   -o-transition: margin 0.25s ease-in-out;
@@ -114,8 +114,8 @@ body.expose div.slide {
 }
 
 body.expose div.slide:hover {
-  background: #e0e0e0;
-  background-color: #e0e0e0;
+  background: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 body.expose .slide-wrapper {
@@ -140,9 +140,9 @@ body.expose .slide.far-future {
 }
 
 body.expose .slide.current {
-  background: #e0e0e0;
-  background-color: #e0e0e0;
-  border: 16px solid #e0e0e0;
+  background: #f0f0f0;
+  background-color: #f0f0f0;
+  border: 16px solid #f0f0f0;
   -moz-transform: scale(.315, .315);
   -moz-transform-origin: 0 0;
   -webkit-transform: scale(.315, .315);
@@ -218,7 +218,7 @@ body.presenter_view div#current_presenter_notes section {
   display: block;
   overflow: visible;
     position: relative;
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     height: 120px;
     margin-right: 30px;
     margin-top: 60px;
@@ -404,7 +404,7 @@ li pre { margin-left: 0em; }
   clear: both;
   background: -webkit-gradient(linear, top right, bottom right, from(#dde), to(#fff));
   -webkit-transition: margin 0.25s ease-in-out;
-  background-color: #e0e0e0;
+  background-color: #f0f0f0;
   background: -moz-linear-gradient(right, #dde, #fff);
   border-right: 5px solid #ccd;
   z-index: 9999999;
