@@ -44,12 +44,12 @@ git config --global user.email "johndoe@example.com"
 git config --global user.name "John Doe"
 `
 
-Pick your favourite terminal based editor (if you don't know what your favourite is then nano is the path of least resistance)
+Pick your favourite terminal based editor (if you don't know what your favourite is then gedit is probably your best bet)
 
-Other options are vim, emacs, pico, gedit...
+Other options are vim, emacs, pico, nano...
 
 `
-git config --global core.editor nano
+git config --global core.editor gedit
 `
 
 Let's make things pretty!
@@ -58,7 +58,7 @@ Let's make things pretty!
 git config --global color.ui true
 `
 
-***Note***: You can also edit the [configuration file](http://git-scm.com/book/ch7-1.html) directly if you wish. It is located at ~/.gitconfig
+***Note***: You can also edit the [configuration file](http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) directly if you wish. It is located at ~/.gitconfig
 
 ---
 # Exercise - Set up your profile using git config
@@ -198,7 +198,7 @@ git diff --cached
 * View the diff for your working directory and staging area
 * Add the new file and the changes to your existing file(s) to your staging area
 * View the diff of your working directoy and staging area
-* Install gitg and enjoy the GUI!
+* Install gitg and use the GUI to view the repository
 * Commit your changes (You can use gitg or the command line interface)
 
 ***Note***: During all of the above steps make lots of use of the *git status* command. It is very helpful for letting you know what is happening in your repo
