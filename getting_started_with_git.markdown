@@ -4,8 +4,7 @@
 # Who am I?
 * Brendan Maguire
 * BEng. in Electronic & Computer Engineering
-* Risk Systems Engineer with [Renaissance Reinsurance](http://www.renre.com)
-* Have worked with various version control system over the past 8 years
+* Have worked with various version control system over the past 10 years
 
 ---
 # What is version control?
