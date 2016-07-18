@@ -1,12 +1,6 @@
 # Getting Started With git
 
 ---
-# Who am I?
-* Brendan Maguire
-* BEng. in Electronic & Computer Engineering
-* Have worked with various version control system over the past 10 years
-
----
 # What is version control?
 * Version Control Systems refer to systems you can use to manage your source code
 * It provides you with a history of the changes that have been made to a code repository
@@ -442,4 +436,3 @@ git push -u origin master
 
 ---
 # Questions??
-![questions](http://ilsmatters.files.wordpress.com/2012/04/monkey_has_a_question1.jpg)
