@@ -1,5 +1,7 @@
 # Getting Started With git
 
+![branches](images/git-logo.png)
+
 ---
 # What is version control?
 * Version Control Systems refer to systems you can use to manage your source code
@@ -315,15 +317,6 @@ git branch -D <branchname>
 `
 
 ---
-# [git rebase](http://git-scm.com/docs/git-rebase)
-* git rebase allows you to move your branches on top of each other
-* Makes for a tidier history when many branches are live at the same time
-* No merge commits left in the history
-* Outside the scope of this presentation
-
-![rebase](images/rebase.png)
-
----
 # Exercise - Branching & Merging
 * Create a new branch in your repository called branch1
 * Check it out and commit some changes
@@ -332,6 +325,49 @@ git branch -D <branchname>
 * Merge the two branches
 * Update your master (hint: merge master to the top most branch in your history)
 * Delete your branches
+
+---
+# Modifying history
+## [git rebase](http://git-scm.com/docs/git-rebase)
+git rebase allows you to modify your history in a number of ways
+
+* moving branches on top of others
+* edit existing messages
+* squash multiple commits into one commit
+
+`
+git rebase <changeset-to-rebase-onto>
+`
+
+---
+# Moving commits on top of others
+* git rebase allows you to move your branches on top of each other
+* Makes for a tidier history when many branches are live at the same time
+* No merge commits left in the history
+* Allows more effective use of [git bisect](http://git-scm.com/docs/git-bisect)
+
+![rebase](images/rebase.png)
+
+---
+# Edit existing commits
+* git rebase facilitates the editing and rewriting of the messages of existing commits
+* Also allows you to "jump into" an existing commit, modify files and add to the existing commit
+
+`
+git rebase -i <changeset-before>
+`
+
+---
+# Squash multiple commits into one
+* Create a single commit from many
+* Allows you to commit regularly with thowaway commit messages when developing
+* Can tidy up a string of commits into one logical commit afterwards
+
+`
+git rebase -i <changeset-before>
+`
+
+![rebase](images/rebase-squash.png)
 
 ---
 # Working with remote repositories
